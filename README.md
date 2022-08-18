@@ -74,7 +74,7 @@ $ volumen --delete-after 60
 ## Install
 ### From source:
 ```shell
-$ git clone https://github.com/SpyrosRoum/volumen.git
+$ git clone https://github.com/aindoria/volumen.git
 $ cd volumen
 $ cargo build --release
 $ ./target/release/volumen
@@ -86,13 +86,13 @@ $ cargo install volumen
 ```
 
 ### With docker-compose:
-Either `wget https://raw.githubusercontent.com/SpyrosRoum/volumen/master/docker-compose.yml` or copy the following into `docker-compose.yml`
+Either `wget https://raw.githubusercontent.com/aindoria/volumen/master/docker-compose.yml` or copy the following into `docker-compose.yml`
 ```
 version: "3.4"
 
 services:
   app:
-    image: spyrosr/volumen
+    image: aindoria/volumen
     ports:
       - 8000:8000
     environment:
