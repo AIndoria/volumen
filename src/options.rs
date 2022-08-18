@@ -3,14 +3,14 @@ use std::path::PathBuf;
 use structopt::StructOpt;
 
 #[derive(StructOpt, Debug)]
-#[structopt(name = "termpad")]
+#[structopt(name = "volumen")]
 pub struct Opt {
     /// Relative or absolute path to the directory where you want to store user-posted pastes.
     #[structopt(
         short,
         long,
         parse(from_os_str),
-        default_value = "~/.local/share/termpad",
+        default_value = "~/.local/share/volumen",
         env = "OUTPUT"
     )]
     pub output: PathBuf,

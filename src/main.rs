@@ -28,7 +28,7 @@ const INPUT_PAGE: &str = include_str!("../static/input.html");
 
 fn main() -> anyhow::Result<()> {
     TermLogger::init(LevelFilter::Info, Config::default(), TerminalMode::Mixed)
-        .context("Failed to initialise logger.")?;
+        .context("Failed to initialize logger.")?;
 
     let mut opt: Opt = Opt::from_args();
     opt.output = utils::expand_tilde(&opt.output)
@@ -154,7 +154,7 @@ fn usage(not_found: Option<bool>, settings: State<Opt>) -> content::Html<String>
         <html lang="en">
         <head>
             <meta charset="UTF-8">
-            <title>termpad</title>
+            <title>VOLVMEN</title>
         </head>
         <body style="background-color:#282a36">
         <h2 style="color:#ccc"> Something went wrong </h2>

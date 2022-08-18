@@ -1,11 +1,11 @@
 [package]
-name = "termpad"
+name = "volumen"
 version = "1.2.0"
 authors = ["Spyros Roum <spyrosr1@gmail.com>"]
 edition = "2018"
 description = "Command line pastebin for sharing terminal output. "
 readme = "README.md"
-repository = "https://github.com/SpyrosRoum/termpad"
+repository = "https://github.com/SpyrosRoum/volumen"
 license-file = "LICENSE"
 categories = ["command-line-utilities"]
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>termpad</title>
+    <title>VOLVMEN</title>
 
     <style>
         body {
@@ -47,6 +47,49 @@
         	right: 0px;
 	        z-index: +1000; /* watch out */
         }
+        .fill {
+        font-size: 20px;
+        font-weight: 200;
+        height:20%;
+        letter-spacing: 1px;
+        padding: 5px 20px 5px;
+        outline: 0;
+        border: 1px solid white;
+        cursor: pointer;
+        position: relative;
+        background-color: rgba(0, 0, 0, 0);
+        }
+
+        .fill::after {
+        content: "";
+        background-color: #fdfdfd;
+        width: 100%;
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        top: 7px;
+        left: 7px;
+        transition: 0.2s;
+        }
+
+        .fill:hover::after {
+        top: 0px;
+        left: 0px;
+        }
+        .header{
+            display:flex;
+            justify-content:space-between;
+        }
+        .logo{
+            padding-right:1.25rem;
+            height:4vh;
+        }
+        .logoHolder{
+            position:relative;
+            top:0px;
+            left:0px;
+            z-index: +1000;
+        }
     </style>
 
     <script>
@@ -66,12 +109,13 @@
 
 </head>
 <body>
-    <div id="key">
-        <button onclick="save()">Save</button>
-        <button onclick="window.location.href = '/usage';">Usage</button>
+    <div class="logoHolder"><a href="https://volumen.civitat.es"><img src="https://tabula.civitat.es/images/2022/07/28/P6qa.png" class="logo"></a></div>
+    <div id="key" class="header">
+        <button onclick="save()" class="fill">Save</button>
+        <button onclick="window.location.href = '/usage';" class="fill">Usage</button>
     </div>
 
-    <div id="prompt">></div>
+    <div id="prompt" style="padding-top:2.5rem;">></div>
     <textarea id="code" spellcheck="true"></textarea>
 </body>
 </html>

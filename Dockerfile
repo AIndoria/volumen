@@ -18,10 +18,10 @@ COPY . .
 # Copy over the cached dependencies
 COPY --from=cacher /app/target target
 COPY --from=cacher /usr/local/cargo /usr/local/cargo
-RUN cargo build --release --bin termpad
+RUN cargo build --release --bin volumen
 
 
 FROM debian:buster-slim as runtime
 WORKDIR app
-COPY --from=builder /app/target/release/termpad /usr/local/bin
-ENTRYPOINT ["/usr/local/bin/termpad"]
+COPY --from=builder /app/target/release/volumen /usr/local/bin
+ENTRYPOINT ["/usr/local/bin/volumen"]

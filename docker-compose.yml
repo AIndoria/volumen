@@ -2,17 +2,14 @@ version: "3.4"
 
 services:
   app:
-    image: spyrosr/termpad
+    image: aindoria/volumen
     ports:
-      - 8000:8000
+      - 8005:8000
     environment:
-      - DOMAIN_NAME=example.com # You probably want to change this
+      - DOMAIN_NAME=volumen.civitat.es # You probably want to change this
       - HTTPS=true
-      - DELETE_AFTER=0 # If you are hosting for yourself keeping them forever is probably fine
+      - DELETE_AFTER=120 # If you are hosting for yourself keeping them forever is probably fine
     volumes:
-      - data:$HOME/.local/share/termpad/
+      - ./data:$HOME/.local/share/volumen/
     restart: always
 
-volumes:
-  data:
-    name: termpad
