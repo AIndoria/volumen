@@ -1,8 +1,29 @@
 # volumen
 
+volumen is a fork of [termpad](https://github.com/SpyrosRoum/termpad); However, I have my own improvements running on it.
 volumen allows you to easily host a pastebin server for saving and viewing text right from the terminal, or the browser.
 
+
+## Changes
+
+* First line defines what type of syntax the rest of the paste highlights to. Eg, doing a #text will not highlight anything because the software will treat it as just plaintext.
+
+* Changed highlight colors to not kill my eyes.
+
 ## Client Usage
+
+Create a fish function
+
+  place this as volumen.fish into your ~/.config/fish/functions folder):
+
+```
+function volumen
+  curl --data-binary @/dev/stdin https://volumen.civitat.es
+end
+```
+
+Then just do, `$ cat reasonsGermansSuck.file | volumen`;
+
 Assuming volumen is running in localhost:8000 you can do this to save text using cURL:  
 ```shell
 $ curl -d "Hello world" localhost:8000
@@ -74,7 +95,7 @@ $ volumen --delete-after 60
 ## Install
 ### From source:
 ```shell
-$ git clone https://github.com/SpyrosRoum/volumen.git
+$ git clone https://github.com/aindoria/volumen.git
 $ cd volumen
 $ cargo build --release
 $ ./target/release/volumen
@@ -86,13 +107,13 @@ $ cargo install volumen
 ```
 
 ### With docker-compose:
-Either `wget https://raw.githubusercontent.com/SpyrosRoum/volumen/master/docker-compose.yml` or copy the following into `docker-compose.yml`
+Either `wget https://raw.githubusercontent.com/aindoria/volumen/master/docker-compose.yml` or copy the following into `docker-compose.yml`
 ```
 version: "3.4"
 
 services:
   app:
-    image: spyrosr/volumen
+    image: aindoria/volumen
     ports:
       - 8000:8000
     environment:
