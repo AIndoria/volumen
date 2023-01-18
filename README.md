@@ -8,6 +8,8 @@ volumen allows you to easily host a pastebin server for saving and viewing text 
 
 * First line defines what type of syntax the rest of the paste highlights to. Eg, doing a #text will not highlight anything because the software will treat it as just plaintext.
 
+* Longform content no longer has horizontal scroll bars and now wraps correctly.
+
 * Changed highlight colors to not kill my eyes.
 
 ## Client Usage
